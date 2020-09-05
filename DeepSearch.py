@@ -1,12 +1,15 @@
-import docx
-from pptx import Presentation
 import os
 from time import sleep
 
-from tkinter import *
-from tkinter import messagebox
-from tkinter import filedialog
-
+try:
+	import docx
+	from pptx import Presentation
+	from tkinter import *
+	from tkinter import messagebox
+	from tkinter import filedialog
+except Exception as e:
+	print('Requirement Not Satisfied')
+	
 def handleDOCXFile(file, search_key):
 	doc = docx.Document(file)
 	pr_no = 1
@@ -32,6 +35,7 @@ def handlePPTXFile(file, search_key):
 	for slide in prs.slides:
 		for shapes in slide.shapes:
 			if shapes.has_text_frame:
+				# print(shapes.text)
 				if(search_key in shapes.text.lower()):
 					flag = True
 					# print('Found at Slide', slide_no)
@@ -70,7 +74,7 @@ def getFiles():
 	clearlist()
 	global i, path
 	# extensions = ['.pptx']
-	extensions = ['.txt', '.py', '.docx', '.pptx']
+	extensions = ['.txt', '.py', '.docx', '.pptx', '.cpp']
 
 	search_key = searchBox.get().lower()
 	if path == 'No Directory Choosen':
