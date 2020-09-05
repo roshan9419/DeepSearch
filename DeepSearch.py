@@ -9,6 +9,10 @@ try:
 	from tkinter import filedialog
 except Exception as e:
 	print('Requirement Not Satisfied')
+	print('pip install python-docx')
+	print('pip install python-pptx')
+	sleep(10)
+	quit()
 	
 def handleDOCXFile(file, search_key):
 	doc = docx.Document(file)
