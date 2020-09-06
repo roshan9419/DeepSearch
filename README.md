@@ -5,3 +5,7 @@ It will search each and every file where the typed word or sentence is present, 
 Helpfull for students, if they don't know the file where the particular topic or word or sentence is present.
 
 Made using tkinter and Python
+
+![](Capture.PNG)
+
+Type any word or phrase to search 
